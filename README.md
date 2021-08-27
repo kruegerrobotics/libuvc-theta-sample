@@ -2,7 +2,7 @@
 
 ## Scope
 
-This is a forof the orginal from [ricoapi](https://github.com/ricohapi/libuvc-theta-sample) it is only modified to be able to build with cmake since this is for some projectes and easier to be clear on depencies and re-use.
+This is a fork the orginal from [libuvc-theta-sample](https://github.com/ricohapi/libuvc-theta-sample) from [ricoapi](https://github.com/ricohapi). **The only modification is the move from a makefile to CMake**. For some projects, modifications or continution this appears to be easier to handle especially with look on depencies and re-use.
 
 ## How to build
 
