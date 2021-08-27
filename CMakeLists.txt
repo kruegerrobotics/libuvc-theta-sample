@@ -26,6 +26,7 @@ set(SOURCES
 
 #message(STATUS "libuvc inlcudes are in: ${lib-uvc-theta_INCLUDE_DIR}")
 
+#the gst_viewer
 add_executable(gst_viewer ${HEADERS} ${SOURCES})
 target_include_directories(gst_viewer PRIVATE ${GSTREAMER_INCLUDE_DIRS})
 target_link_libraries(gst_viewer
@@ -35,3 +36,8 @@ target_link_libraries(gst_viewer
     pthread
     uvc
 )
+
+#the gst_loopback is the same executable as the gst_viewer, but due to different name it causes
+#internally via arg0 a differen behaviour - thus we create a static link to the viewer with this name
+add_custom_target(gst_loopback ALL
+    COMMAND ${CMAKE_COMMAND} -E create_symlink gst_viewer gst_loopback)
