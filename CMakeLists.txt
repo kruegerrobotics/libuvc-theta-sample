@@ -13,7 +13,7 @@ add_definitions(-DGST_API_VERSION_1=1)
 #find the libuvc via its own cmake module - the theta version
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules")
 #find_package(lib-uvc-theta REQUIRED)
-find_package(libuvc)
+find_package(libuvc REQUIRED)
 
 set(HEADERS
     gst/thetauvc.h
@@ -34,7 +34,7 @@ target_link_libraries(gst_viewer
     ${GSTREAMER-APP_LIBRARIES}
     ${GLIB_LIBRARIES}
     pthread
-    uvc
+    LibUVC::UVCStatic
 )
 
 #the gst_loopback is the same executable as the gst_viewer, but due to different name it causes
